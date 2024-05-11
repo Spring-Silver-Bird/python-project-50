@@ -1,4 +1,4 @@
-name: main
+name: project-check
 
 on:
   - push
