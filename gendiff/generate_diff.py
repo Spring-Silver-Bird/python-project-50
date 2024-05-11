@@ -1,4 +1,3 @@
-import argparse
 import json
 
 
@@ -15,8 +14,5 @@ def generate_diff(file_path1, file_path2):
         for key, value in sorted(file2.items()):
             if key not in file1 or value != file1[key]:
                 results += f"  + {key}: {value}\n"
-        results += '}'
+        results += '}\n'
         return results
-
-
-

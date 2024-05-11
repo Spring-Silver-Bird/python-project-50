@@ -3,7 +3,7 @@ from gendiff.cli import get_parser_args
 
 def main():
     args = get_parser_args()
-    diff = generate_diff(args.path_file1, args.path_file2)
+    diff = generate_diff(args.path_file1, args.path_file2 )
     print(diff)
 
 
