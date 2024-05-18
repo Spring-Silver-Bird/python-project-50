@@ -5,7 +5,7 @@ import os
 def get_data_of_file(file_path):
     _, file_extension = os.path.splitext(file_path)
     with open(file_path) as file:
-        return parse_data_from_file(file, file_extension[1:])
+        return parse_data(file, file_extension[1:])
 
 
 def parse_data(file, extension):
@@ -15,6 +15,3 @@ def parse_data(file, extension):
         return yaml.safe_load(file)
     raise ValueError('Unsupported format. Next formats are supported: .json .yaml .yml')
 
-
-def parse_data_from_file(data, extension):
-    return parse_data(data, extension)

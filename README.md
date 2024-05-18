@@ -4,3 +4,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3efaf76d083dace6232c/maintainability)](https://codeclimate.com/github/Spring-Silver-Bird/python-project-50/maintainability)
 
 [![asciicast](https://asciinema.org/a/jxGjebUK4rq4BFTIQajrEZJM8.svg)](https://asciinema.org/a/jxGjebUK4rq4BFTIQajrEZJM8)
+
+
+[![asciicast](https://asciinema.org/a/qGqPtbJL9PB8PZN2huN8OJc0r.svg)](https://asciinema.org/a/qGqPtbJL9PB8PZN2huN8OJc0r)
