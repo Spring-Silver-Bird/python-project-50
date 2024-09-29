@@ -39,7 +39,6 @@ def make_stylish_result(diff, depth=1):
             lines.append(f'{indent}{DELETE}{key_name}: {old_value}')
             lines.append(f'{indent}{ADD}{key_name}: {new_value}')
         elif action == 'deleted':
-#            print(f'File was deleted... File status: {action}, name:{key_name}, value:{old_value}')
             lines.append(f'{indent}{DELETE}{key_name}: {old_value}')
         elif action == 'added':
             lines.append(f'{indent}{ADD}{key_name}: {new_value}')

@@ -19,4 +19,4 @@ test-coverage:
 	poetry run coverage report
 
 lint:
-	poetry run flake8 gendiff
+	poetry run flake8

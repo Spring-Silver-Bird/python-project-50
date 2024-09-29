@@ -1,27 +1,50 @@
+import pytest
 from gendiff.generate_diff import generate_diff
 
-def test_generate_diff_json():
-    first_file = 'tests/fixtures/file_1.json'
-    second_file = 'tests/fixtures/file_2.json'
-    true_diff = open('tests/fixtures/result_json_depth.txt', 'r', encoding='utf-8')
-    diff = generate_diff(first_file, second_file)
-    assert diff == true_diff.read()
-    true_diff.close()
 
-def test_generate_diff_yml():
-    first_file = 'tests/fixtures/file_1.yaml'
-    second_file = 'tests/fixtures/file_2.yaml'
-    true_diff = open('tests/fixtures/result.txt', 'r', encoding='utf-8')
-    diff = generate_diff(first_file, second_file)
-    assert diff == true_diff.read()
-    true_diff.close()
-
-
-def test_generate_plain_diff_json():
-    first_file = 'tests/fixtures/file_1.json'
-    second_file = 'tests/fixtures/file_2.json'
-    formatter = 'plain'
-    true_diff = open('tests/fixtures/result_json_plain_depth.txt', 'r', encoding='utf-8')
-    diff = generate_diff(first_file, second_file, formatter)
-    assert diff == true_diff.read()
-    true_diff.close()
+@pytest.mark.parametrize(
+    'path_to_file1, path_to_file2, formatter, expected_result',
+    [
+        (
+            './tests/fixtures/file_1.json',
+            './tests/fixtures/file_2.json',
+            'stylish',
+            './tests/fixtures/tru_stylish_result.txt'
+        ),
+        (
+            './tests/fixtures/file_1.yaml',
+            './tests/fixtures/file_2.yaml',
+            'stylish',
+            './tests/fixtures/tru_stylish_result.txt'
+        ),
+        (
+            './tests/fixtures/file_1.json',
+            './tests/fixtures/file_2.json',
+            'plain',
+            './tests/fixtures/tru_plain_result.txt'
+        ),
+        (
+            './tests/fixtures/file_1.yaml',
+            './tests/fixtures/file_2.yaml',
+            'plain',
+            './tests/fixtures/tru_plain_result.txt'
+        ),
+        (
+            './tests/fixtures/file_1.json',
+            './tests/fixtures/file_2.json',
+            'json',
+            './tests/fixtures/tru_json_result.txt'
+        ),
+        (
+            './tests/fixtures/file_1.yaml',
+            './tests/fixtures/file_2.yaml',
+            'json',
+            './tests/fixtures/tru_json_result.txt'
+        )
+    ]
+)
+def test_gendiff(path_to_file1, path_to_file2, formatter, expected_result):
+    diff = generate_diff(path_to_file1, path_to_file2, formatter)
+    with open(expected_result, 'r', encoding='utf8') as file:
+        result = file.read().strip('\n')
+        assert diff == result

@@ -1,2 +1,6 @@
+.venv/
+__pycache__
 dist/
-__pycache__/
+.pytest_cache
+.coverage
+gendiff/scripts/__pycache__
