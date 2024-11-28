@@ -42,7 +42,7 @@ def make_stylish(diff, depth=1):
             lines.append(f'{indent}{DELETE}{key_name}: {old_value}')
         elif action == 'added':
             lines.append(f'{indent}{ADD}{key_name}: {new_value}')
-        elif action == 'nested':
+        else:
             children = make_stylish(item.get('children'), depth + 1)
             lines.append(f'{indent}{NONE}{key_name}: {children}')
     formatted_string = '\n'.join(lines)
