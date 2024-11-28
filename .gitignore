@@ -4,3 +4,6 @@ dist/
 .pytest_cache
 .coverage
 gendiff/scripts/__pycache__
+.idea/
+gendiff.cast
+gendiff_json.cast

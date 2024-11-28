@@ -2,6 +2,9 @@ import argparse
 
 
 def get_parser_args():
+    """
+    Parse and return command-line arguments.
+    """
     parser = argparse.ArgumentParser(
         description='Compares two configuration files and shows a difference.'
     )

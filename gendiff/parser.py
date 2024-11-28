@@ -4,6 +4,11 @@ import os
 
 
 def get_format_file(file_path):
+    """
+    Parses a file based on its extension ('yaml', 'yml', 'json').
+
+    Supports YAML and JSON formats. Raises an error for unsupported formats.
+    """
     _, extension = os.path.splitext(file_path)
     return extension[1:]
 
