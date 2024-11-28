@@ -24,7 +24,7 @@ def format_string(value, depth=1):
     return f'{value}'
 
 
-def make_stylish_result(diff, depth=1):
+def make_stylish(diff, depth=1):
     indent = SEPARATOR * (depth * DEFAULT_INDENT - 2)
     lines = []
     for item in diff:
@@ -43,9 +43,7 @@ def make_stylish_result(diff, depth=1):
         elif action == 'added':
             lines.append(f'{indent}{ADD}{key_name}: {new_value}')
         elif action == 'nested':
-            children = make_stylish_result(
-                item.get('children'), depth + 1
-            )
+            children = make_stylish(item.get('children'), depth + 1)
             lines.append(f'{indent}{NONE}{key_name}: {children}')
     formatted_string = '\n'.join(lines)
     end_indent = SEPARATOR * (depth * DEFAULT_INDENT - 4)
@@ -54,4 +52,4 @@ def make_stylish_result(diff, depth=1):
 
 
 def format_diff_stylish(data):
-    return make_stylish_result(data)
+    return make_stylish(data)
