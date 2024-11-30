@@ -3,7 +3,7 @@ from gendiff.generate import generate
 from gendiff.format.choice_formatter import format_diff
 
 
-def generate_diff(file_path1, file_path2, formatter='stylish'):
+def gen_diff(file_path1, file_path2, formatter='stylish'):
     old_data = make_data(file_path1)
     new_data = make_data(file_path2)
     diff = generate(old_data, new_data)

@@ -4,7 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["Spring-Silver-Bird <adelaida_19@mail.ru>"]
 readme = "README.md"
-packages = [{include = "gendiff"},]
+packages = [
+    {include = "gendiff"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
