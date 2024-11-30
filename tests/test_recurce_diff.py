@@ -1,5 +1,5 @@
 import pytest
-from gendiff.generate_diff import generate_diff
+from gendiff.diff_generator import generate_diff
 
 
 @pytest.mark.parametrize(
