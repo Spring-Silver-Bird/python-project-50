@@ -1,25 +1,22 @@
 install:
-	poetry install
+	uv install
 
 gendiff-help:
-	poetry run gendiff -h
+	uv run gendiff -h
 
 build:
-	poetry build
+	uv build
 
 package-install:
-	python3 -m pip install --user dist/hexlet_code-0.1.0-py3-none-any.whl
-
-package-reinstall:
-	pip install --force-reinstall dist/*.whl
+	uv tool install dist/*.whl
 
 test:
-	poetry run pytest
+	uv run pytest
 
 test-coverage:
-	poetry run coverage run -m pytest
-	poetry run coverage xml
-	poetry run coverage report
+	uv run pytest --cov --cov-report xml:coverage.xml
 
 lint:
-	poetry run flake8 gendiff
+	uv run ruff check gendiff
+
+.PHONY: install test lint selfcheck check build

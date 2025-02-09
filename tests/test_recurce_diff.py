@@ -6,40 +6,40 @@ from gendiff.diff_generator import generate_diff
     'path_to_file1, path_to_file2, formatter, expected_result',
     [
         (
-            './tests/fixtures/file_1.json',
-            './tests/fixtures/file_2.json',
+            './tests/test_data/file_1.json',
+            './tests/test_data/file_2.json',
             'stylish',
-            './tests/fixtures/tru_stylish_result.txt'
+            './tests/test_data/tru_stylish_result.txt'
         ),
         (
-            './tests/fixtures/file_1.yaml',
-            './tests/fixtures/file_2.yaml',
+            './tests/test_data/file_1.yaml',
+            './tests/test_data/file_2.yaml',
             'stylish',
-            './tests/fixtures/tru_stylish_result.txt'
+            './tests/test_data/tru_stylish_result.txt'
         ),
         (
-            './tests/fixtures/file_1.json',
-            './tests/fixtures/file_2.json',
+            './tests/test_data/file_1.json',
+            './tests/test_data/file_2.json',
             'plain',
-            './tests/fixtures/tru_plain_result.txt'
+            './tests/test_data/tru_plain_result.txt'
         ),
         (
-            './tests/fixtures/file_1.yaml',
-            './tests/fixtures/file_2.yaml',
+            './tests/test_data/file_1.yaml',
+            './tests/test_data/file_2.yaml',
             'plain',
-            './tests/fixtures/tru_plain_result.txt'
+            './tests/test_data/tru_plain_result.txt'
         ),
         (
-            './tests/fixtures/file_1.json',
-            './tests/fixtures/file_2.json',
+            './tests/test_data/file_1.json',
+            './tests/test_data/file_2.json',
             'json',
-            './tests/fixtures/tru_json_result.txt'
+            './tests/test_data/tru_json_result.txt'
         ),
         (
-            './tests/fixtures/file_1.yaml',
-            './tests/fixtures/file_2.yaml',
+            './tests/test_data/file_1.yaml',
+            './tests/test_data/file_2.yaml',
             'json',
-            './tests/fixtures/tru_json_result.txt'
+            './tests/test_data/tru_json_result.txt'
         )
     ]
 )
