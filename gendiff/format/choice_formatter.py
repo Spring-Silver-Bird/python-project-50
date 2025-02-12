@@ -11,4 +11,4 @@ def format_diff(diff, formatter):
     elif formatter == "json":
         return format_diff_json(diff)
     else:
-        return f"Формат введен неверно: {formatter}"
+        return f"Invalid format: {formatter}"
