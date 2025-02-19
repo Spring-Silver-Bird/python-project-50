@@ -18,13 +18,15 @@ def make_plain_result_item(item, path=''):
     match action:
         case 'added':
             new_value = format_string(item['new_value'])
-            return f"Property '{current_path}' was added with value: {new_value}"
+            return (f"Property '{current_path}' "
+                    f"was added with value: {new_value}")
         case 'deleted':
             return f"Property '{current_path}' was removed"
         case 'changed':
             old_value = format_string(item['old_value'])
             new_value = format_string(item['new_value'])
-            return f"Property '{current_path}' was updated. From {old_value} to {new_value}"
+            return (f"Property '{current_path}' "
+                    f"was updated. From {old_value} to {new_value}")
         case 'nested':
             return make_plain_result(item['children'], current_path)
 
