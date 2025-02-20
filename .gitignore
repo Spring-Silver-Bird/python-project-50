@@ -7,3 +7,4 @@ gendiff/scripts/__pycache__
 .idea/
 gendiff.cast
 gendiff_json.cast
+coverage.xml
