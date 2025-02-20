@@ -17,6 +17,6 @@ test-coverage:
 	uv run pytest --cov --cov-report xml:coverage.xml
 
 lint:
-	uv run ruff check gendiff
+	uv run ruff check .
 
 .PHONY: install test lint selfcheck check build
