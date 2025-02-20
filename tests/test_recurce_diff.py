@@ -50,6 +50,7 @@ def test_gendiff(path_to_file1, path_to_file2, formatter, expected_result):
         result = file.read().strip('\n')
         assert diff == result
 
+
 def test_exception():
     with pytest.raises(ValueError):
         generate_diff('./tests/test_data/file_1.json',

@@ -1,6 +1,7 @@
 import json
 
+IND = 4
 
-INDENT = 4
+
 def format_diff_json(diff):
-    return json.dumps(diff, sort_keys=True, indent=INDENT, separators=(',', ': '))
+    return json.dumps(diff, sort_keys=True, indent=IND, separators=(',', ': '))
