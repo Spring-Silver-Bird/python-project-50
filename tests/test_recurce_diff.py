@@ -49,3 +49,8 @@ def test_gendiff(path_to_file1, path_to_file2, formatter, expected_result):
     with open(expected_result, 'r', encoding='utf8') as file:
         result = file.read().strip('\n')
         assert diff == result
+
+def test_exception():
+    with pytest.raises(ValueError):
+        generate_diff('./tests/test_data/file_1.json',
+            './tests/test_data/file_2.txt',)
